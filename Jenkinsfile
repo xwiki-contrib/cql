@@ -30,7 +30,7 @@
 xwikiModule {
   // Note: Java 11+ is required for Sonar/Sonarcloud
   goals = 'clean deploy jacoco:report sonar:sonar'
-  profiles = 'quality,integration-tests,docker'
+  profiles = 'quality'
   sonar = true
 }
 */
