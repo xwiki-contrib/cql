@@ -147,8 +147,6 @@ public class DefaultCQLToSolrAtomConverter implements CQLToSolrAtomConverter
         SOLR_UNITS_BY_CQL_SUFFIX.put("m", "MINUTES");
     }
 
-    private static final String ROOT_SPACE_FACET_PREFIX = "0/";
-
     @Inject
     private Provider<XWikiContext> contextProvider;
 
