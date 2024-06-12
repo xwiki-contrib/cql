@@ -827,6 +827,15 @@ class CQLTest
     }
 
     @Test
+    void testSpaceInFunctionArgs() throws Exception
+    {
+        assertEquals(
+            "space_facet:0\\/MySpaceTests.",
+            t("space=currentSpace( )")
+        );
+    }
+
+    @Test
     void testParen1() throws Exception
     {
         assertEquals(

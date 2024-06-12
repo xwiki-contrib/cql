@@ -259,6 +259,7 @@ public class Parser
 
     private List<AbstractAQLAtomicValue> parseRemainingFunctionCallArguments() throws ParserException, IOException
     {
+        this.reader.skipWhite();
         if (this.reader.maybeEat(')')) {
             return Collections.emptyList();
         }
