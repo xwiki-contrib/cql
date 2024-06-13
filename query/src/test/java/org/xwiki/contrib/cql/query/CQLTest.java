@@ -455,7 +455,7 @@ class CQLTest
     void testCQLDateMissingDay()
     {
         expectParserException(
-            "Expected '/' in the date started at [line 1, col 11, pos 10] (line 1, col 18, pos 17)." + PATH_DATE_PART,
+            "Expected '/' in the date started at [line 1, col 11, pos 10] (line 1, col 17, pos 16)." + PATH_DATE_PART,
             "created = 2008/05"
         );
     }
@@ -481,7 +481,7 @@ class CQLTest
     void testCQLInMissingParen1()
     {
         expectParserException(
-            "Expected closing parenthesis ')' (line 1, col 22, pos 21). Path: clauses > clause > atom > in expr",
+            "Expected closing parenthesis ')' (line 1, col 17, pos 16). Path: clauses > clause > atom > in expr",
             "title in (salut,");
     }
 
@@ -489,7 +489,7 @@ class CQLTest
     void testCQLInMissingParen2()
     {
         expectParserException(
-            "Expected closing parenthesis ')' (line 1, col 20, pos 19)."
+            "Expected closing parenthesis ')' (line 1, col 16, pos 15)."
                 + " Path: clauses > clause > atom > in expr",
             "title in (salut");
     }
@@ -775,7 +775,7 @@ class CQLTest
     void testStringNotEnded()
     {
         expectParserException(
-            "Unexpected end, expected the end of string started at [line 1, col 9, pos 8] (line 1, col 16, pos 15)."
+            "Unexpected end, expected the end of string started at [line 1, col 9, pos 8] (line 1, col 15, pos 14)."
                 + PATH_STRING,
             "space = 'hello");
     }
@@ -785,7 +785,7 @@ class CQLTest
     {
         expectParserException(
             "Unexpected end, expected an escaped character after '\\', and the end of string started at"
-                + " [line 1, col 9, pos 8] (line 1, col 17, pos 16)."
+                + " [line 1, col 9, pos 8] (line 1, col 16, pos 15)."
                 + PATH_STRING,
             "space = 'hello\\");
     }
@@ -848,7 +848,7 @@ class CQLTest
     void testMissingClauseCloseParen()
     {
         expectParserException(
-            "Expected closing parenthesis ')' (line 1, col 69, pos 68)."
+            "Expected closing parenthesis ')' (line 1, col 61, pos 60)."
                 + " Path: clauses > clause",
             "(title > 42 or title = mytitle and (creator = currentUser())"
         );
@@ -858,7 +858,7 @@ class CQLTest
     void testJustOneOpenParen()
     {
         expectParserException(
-            "Expected a field (line 1, col 6, pos 5). Path: clauses > clause > clauses > clause > atom > field",
+            "Expected a field (line 1, col 2, pos 1). Path: clauses > clause > clauses > clause > atom > field",
             "("
         );
     }
@@ -867,7 +867,7 @@ class CQLTest
     void testMissingFunctionCallCloseParen1()
     {
         expectParserException(
-            "Unexpected end while trying to parse the end of the function call (line 1, col 28, pos 27)."
+            "Unexpected end while trying to parse the end of the function call (line 1, col 23, pos 22)."
                 + PATH_FN_CALL,
             "creator = currentUser("
         );
@@ -877,7 +877,7 @@ class CQLTest
     void testMissingFunctionCallCloseParen2()
     {
         expectParserException(
-            "Unexpected end while trying to parse the end of the function call (line 1, col 31, pos 30)."
+            "Unexpected end while trying to parse the end of the function call (line 1, col 28, pos 27)."
                 + PATH_FN_CALL,
             "creator = currentUser(hello"
         );
@@ -887,7 +887,7 @@ class CQLTest
     void testMissingFunctionCallCloseParen3()
     {
         expectParserException(
-            "Unexpected end while trying to parse the end of the function call (line 1, col 33, pos 32)."
+            "Unexpected end while trying to parse the end of the function call (line 1, col 29, pos 28)."
                 + PATH_FN_CALL,
             "creator = currentUser(hello,"
         );
@@ -897,7 +897,7 @@ class CQLTest
     void testMissingInParen()
     {
         expectParserException(
-            "Expected opening parenthesis '(' (line 1, col 15, pos 14). Path: clauses > clause > atom > in expr",
+            "Expected opening parenthesis '(' (line 1, col 13, pos 12). Path: clauses > clause > atom > in expr",
             "title not in"
         );
     }
