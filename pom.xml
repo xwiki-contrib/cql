@@ -52,10 +52,6 @@
       <email>raphael.jakse at xwiki.com</email>
       <timezone>+1</timezone>
     </developer>
-    <developer>
-      <id>xwikidev</id>
-      <name>XWiki Development Team</name>
-    </developer>
   </developers>
   <modules>
     <module>aqlparser</module>
