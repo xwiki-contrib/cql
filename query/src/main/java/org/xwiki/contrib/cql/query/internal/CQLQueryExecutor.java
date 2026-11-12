@@ -109,6 +109,11 @@ public class CQLQueryExecutor implements QueryExecutor
             // Said differently, the callee has priority over the CQL statement and can override its order by clause.
             q.bindValue(SORT, solrSortParameter);
         }
+
+        // WebPreferences documents are never a valid result for a CQL query and they may show up in Solr results for
+        // users who display hidden documents.
+        q.bindValue("fq", "-name:WebPreferences");
+
         return q;
     }
 
